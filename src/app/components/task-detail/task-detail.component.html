@@ -1,10 +1,15 @@
-<div>Task details</div>
-<div *ngIf="task">
-  <label>Title:</label>
-  <input type="text" [(ngModel)]="task.title" /><br />
-  <label>Text:</label>
-  <textarea [(ngModel)]="task.text"></textarea><br />
-  <label>Status:</label>
-  <input type="text" [(ngModel)]="task.status" /><br />
-  <button (click)="saveTask()">Save</button>
-</div>
+<div class="task-detail-container">
+    <div class="task-detail-item">
+      <label class="task-detail-label">Title:</label>
+      <input class="task-detail-input" type="text" [(ngModel)]="task.title">
+    </div>
+    <div class="task-detail-item">
+      <label class="task-detail-label">Text:</label>
+      <textarea class="task-detail-input" [(ngModel)]="task.text"></textarea>
+    </div>
+    <div class="task-detail-item">
+      <label class="task-detail-label">Status:</label>
+      <input class="task-detail-input" type="text" [(ngModel)]="task.status">
+    </div>
+    <button class="task-detail-item" (click)="saveTask()">Save</button>
+  </div>
