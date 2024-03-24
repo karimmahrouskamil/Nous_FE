@@ -19,6 +19,6 @@ export class TaskListComponent {
 
   onTaskSelected(task: Task) {
     const taskId = task._id 
-    this.router.navigate(['/tasks', Number(taskId)]); // Navigate to detail view with id
+    this.router.navigate(['/tasks',  taskId]); // Navigate to detail view with id
   }
 }
