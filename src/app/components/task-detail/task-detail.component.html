@@ -1,15 +1,21 @@
+<!-- task-detail.component.html -->
+
 <div class="task-detail-container">
-    <div class="task-detail-item">
-      <label class="task-detail-label">Title:</label>
-      <input class="task-detail-input" type="text" [(ngModel)]="task.title">
-    </div>
-    <div class="task-detail-item">
-      <label class="task-detail-label">Text:</label>
-      <textarea class="task-detail-input" [(ngModel)]="task.text"></textarea>
-    </div>
-    <div class="task-detail-item">
-      <label class="task-detail-label">Status:</label>
-      <input class="task-detail-input" type="text" [(ngModel)]="task.status">
-    </div>
-    <button class="task-detail-item" (click)="saveTask()">Save</button>
+  <div class="task-detail-item">
+    <label class="task-detail-label">Title:</label>
+    <input class="task-detail-input" type="text" [(ngModel)]="task.title">
   </div>
+  <div class="task-detail-item">
+    <label class="task-detail-label">Text:</label>
+    <textarea class="task-detail-input" [(ngModel)]="task.text"></textarea>
+  </div>
+  <div class="task-detail-item">
+    <label class="task-detail-label">Status:</label>
+    <select class="task-detail-input" [(ngModel)]="task.status">
+      <option value="TODO">TODO</option>
+      <option value="IN_PROGRESS">IN_PROGRESS</option>
+      <option value="DONE">DONE</option>
+    </select>
+  </div>
+  <button class="task-detail-item" (click)="saveTask()">Save</button>
+</div>

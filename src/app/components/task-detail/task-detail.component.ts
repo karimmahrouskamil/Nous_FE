@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Task } from '../../models/task.model';
 import { TaskService } from '../../services/task-service/task.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-task-detail',
   templateUrl: './task-detail.component.html',
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class TaskDetailComponent {
   task!: Task;
 
-  constructor(private route: ActivatedRoute, private taskService: TaskService) { }
+  constructor(private route: ActivatedRoute, private taskService: TaskService, private router: Router) { }
 
   ngOnInit(): void {
     const taskId = this.route.snapshot.paramMap.get('taskId'); 
@@ -23,6 +23,7 @@ export class TaskDetailComponent {
     this.taskService.updateTask(this.task).subscribe(updatedTask => {
       this.task = updatedTask;
       console.log('Task updated successfully!');
+      this.router.navigate(['/tasks']);
     });
   }
 }
